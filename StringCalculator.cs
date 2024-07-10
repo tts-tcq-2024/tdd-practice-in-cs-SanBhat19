@@ -20,7 +20,7 @@ public class StringCalculator
             splitNumbers = numbers.Substring(delimiterIndex + 1).Split(new string[] { customDelimiter }, StringSplitOptions.None);
         }
 
-        List<int> numList = ParseNumber();       
+        List<int> numList = ParseNumber(splitNumbers);       
 
         return numList.Sum();
     }
@@ -36,7 +36,7 @@ public class StringCalculator
         }
         return numList;
     }
-    public int CheckParsedNumber(List<int> parsedNumber)
+    public int CheckParsedNumber(int parsedNumber)
     {
         if (parsedNumber < 0)
         {
@@ -46,5 +46,6 @@ public class StringCalculator
         {
             return parsedNumber;
         }
+        return parsedNumber;
     }
 }

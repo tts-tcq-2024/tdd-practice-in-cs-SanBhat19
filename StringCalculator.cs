@@ -34,8 +34,9 @@ public class StringCalculator
                 numList.Add(CheckParsedNumber(parsedNumber));                
             }
         }
+        return numList;
     }
-    public List<int> CheckParsedNumber(List<int> parsedNumber)
+    public int CheckParsedNumber(List<int> parsedNumber)
     {
         if (parsedNumber < 0)
         {

@@ -41,12 +41,11 @@ public class StringCalculator
         if (parsedNumber < 0)
         {
             throw new Exception("Negatives not allowed");
-            return 0;
         }
         if (parsedNumber <= 1000)
         {
             return parsedNumber;
         }
-        return parsedNumber;
+        return 0;
     }
 }

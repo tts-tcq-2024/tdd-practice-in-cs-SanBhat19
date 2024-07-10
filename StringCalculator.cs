@@ -31,15 +31,19 @@ public class StringCalculator
         {
             if (int.TryParse(number, out int parsedNumber))
             {
-                if (parsedNumber < 0)
-                {
-                    throw new Exception("Negatives not allowed");
-                }
-                if (parsedNumber <= 1000)
-                {
-                    numList.Add(parsedNumber);
-                }
+                numList.Add(CheckParsedNumber(parsedNumber));                
             }
+        }
+    }
+    public List<int> CheckParsedNumber(List<int> parsedNumber)
+    {
+        if (parsedNumber < 0)
+        {
+            throw new Exception("Negatives not allowed");
+        }
+        if (parsedNumber <= 1000)
+        {
+            return parsedNumber;
         }
     }
 }

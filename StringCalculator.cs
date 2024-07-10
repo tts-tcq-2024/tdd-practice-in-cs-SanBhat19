@@ -10,7 +10,7 @@ public class StringCalculator
             return 0;
         }
 
-        char[] delimiters = new char[] { ',', '\n' };
+        char[] delimiters = new char[] { ',', '\n',';','*' };
         string[] splitNumbers = numbers.Split(delimiters, StringSplitOptions.None);
 
         if (numbers.StartsWith("//"))
@@ -20,6 +20,12 @@ public class StringCalculator
             splitNumbers = numbers.Substring(delimiterIndex + 1).Split(new string[] { customDelimiter }, StringSplitOptions.None);
         }
 
+        List<int> numList = ParseNumber();       
+
+        return numList.Sum();
+    }
+    public List<int> ParseNumber(string[] splitNumbers)
+    {
         List<int> numList = new List<int>();
         foreach (string number in splitNumbers)
         {
@@ -35,7 +41,5 @@ public class StringCalculator
                 }
             }
         }
-
-        return numList.Sum();
     }
 }
